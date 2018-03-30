@@ -32,6 +32,3 @@ tests-actual:
 	PYTHONPATH=/python-testing/lib/python3.6/site-packages:/home/app/project/python \
 	AWS_DEFAULT_REGION=us-east-1 \
 	${TESTS}
-
-pull:
-docker pull realsalmon/alpinelinux-python-boto3:latest
