@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: "Test stack for the cloud-formation-echo custom resource"
+
+Parameters:
+
+  ValueToEcho:
+    Description: "The value to echo"
+    Type: "String"
+
+  EchoKey:
+    Description: "Systems Manager Parameter Store key of the resource service token"
+    Type: "AWS::SSM::Parameter::Value<String>"
+    Default: "/cloud-formation/service-tokens/echo"
+
+Resources:
+
+  EchoSomething:
+    Type: "Custom::EchoSomething"
+    Version: "1.0"
+    Properties:
+      ServiceToken: !Ref "EchoKey"
+      Echo: !Sub "I was given \"${ValueToEcho}\""
+
+Outputs:
+  EchoValue:
+    Value: !Ref "EchoSomething"
