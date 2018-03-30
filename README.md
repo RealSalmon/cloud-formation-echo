@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/RealSalmon/cloud-formation-echo.svg?style=svg)](https://circleci.com/gh/RealSalmon/cloud-formation-echo)
+
 # cloud-formation-echo
 
 ## A CloudFormation resource that returns the same string it is supplied with
